@@ -1,0 +1,16 @@
+#include <iostream>
+
+using namespace std;
+int nr_cif(int n,int k)
+{
+    int nr=0,p;
+    while(n)
+    {
+        p=n%10;
+        if(p!=0)
+        if(k%p==0)
+            nr++;
+        n=n/10;
+    }
+    return nr;
+}
