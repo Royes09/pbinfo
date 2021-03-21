@@ -1,0 +1,11 @@
+#include <iostream>
+
+using namespace std;
+int cmmdc(int n,int m)
+{
+    if(n==m)
+        return n;
+    else if(n>m)
+        return cmmdc(n-m,m);
+    else return cmmdc(n,m-n);
+}
