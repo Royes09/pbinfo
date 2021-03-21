@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+void dei(int v[1000],int ls,int ld, int &Rez)
+{
+    int R1=0,R2=0;
+    if(ls==ld)
+    {
+        if(v[ls]%2==0)
+        Rez=Rez+v[ls];
+        else Rez=Rez+0;
+    }
+    else
+    {
+        int m;
+        m=(ls+ld)/2;
+        dei(v,ls,m,R1);
+        dei(v,m+1,ld,R2);
+        Rez=R1+R2;
+    }
+}
+int main()
+{
+    int v[1000],n,S=0;
+    cin>>n;
+    for(int i=0;i<n;i++)
+        cin>>v[i];
+        int ls=0,ld=n-1;
+    dei(v,ls,ld,S);
+    cout<<S;
+    return 0;
+}
