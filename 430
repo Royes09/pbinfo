@@ -1,0 +1,35 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+ifstream fin("izolate.in");
+ofstream fout("izolate.out");
+int M[101][101];
+int main()
+{
+    int n,x,y,nr=0;
+    fin>>n;
+    int v[n+2];
+    int z=1;
+    while(fin>>x>>y)
+    {
+        M[x][y]=1;
+        M[y][x]=1;
+
+    }
+    for(int i=1;i<=n;i++)
+    {
+        int S=0;
+        for(int j=1;j<=n;j++)
+            S=S+M[i][j];
+        if(S==0)
+        {
+        nr++;
+        v[z]=i;
+        z++;
+        }
+    }
+    v[0]=nr;
+    for(int i=0;i<=nr;i++)
+        fout<<v[i]<<" ";
+    return 0;
+}
