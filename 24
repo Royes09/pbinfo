@@ -1,0 +1,10 @@
+int oglindit(int n)
+{
+    int og=0;
+    while (n)
+    {
+        og=og*10+n%10;
+    n=n/10;
+    }
+    return og;
+}
