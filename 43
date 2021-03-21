@@ -1,0 +1,21 @@
+#include <iostream>
+
+using namespace std;
+double nreal(int x, int y)
+{
+    int aux=y,nr=0;
+    double n=x;
+    while(aux)
+    {
+        n=n*10;
+        nr++;
+        aux=aux/10;
+    }
+    n=n+y;
+    while (nr)
+    {
+        n=n/10;
+        nr--;
+    }
+    return n;
+}
