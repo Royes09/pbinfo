@@ -1,0 +1,37 @@
+#include <iostream>
+
+using namespace std;
+int cifra_control(int x)
+{
+    int S=0,aux;
+        aux=x;
+        while(aux)
+        {
+            S=S+aux%10;
+            aux=aux/10;
+        }
+       while(S>=10)
+        {
+            aux=S;
+            S=0;
+            while(aux)
+            {
+                S=S+aux%10;
+                aux=aux/10;
+            }
+        }
+        return S;
+}
+int sum_cifra_control(int a, int b)
+{
+    int nr=0,i;
+    for(i=a;i<=b;i++)
+    {
+        if(cifra_control(i)==a)
+        {
+            nr++;
+            i=i+8;
+        }
+    }
+    return nr;
+}
