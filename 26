@@ -1,0 +1,30 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int v[10];
+int cmmnr(int n)
+{
+    int x,i,c,min;
+    c=0;
+    min=10;
+    while (n)
+    {
+        x=n%10;
+        if(x<min && x!=0)
+            min=x;
+        n=n/10;
+        v[x]++;
+    }
+    if(v[min]!=0)
+    {
+        c=c*10+min;
+        v[min]--;
+    }
+    for(i=0;i<10;i++)
+        while(v[i])
+    {
+        c=c*10+i;
+        v[i]--;
+    }
+        return c;
+}
