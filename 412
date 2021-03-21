@@ -1,0 +1,25 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+ifstream fin("adiacenta.in");
+ofstream fout("adiacenta.out");
+int M[101][101];
+int main()
+{
+    int n,m,x,y,i,j;
+    fin>>n>>m;
+    for(i=1;i<=m;i++)
+    {
+        fin>>x>>y;
+        M[x][y]=1;
+        M[y][x]=1;
+
+    }
+    for(i=1;i<=n;i++)
+    {
+        for(j=1;j<=n;j++)
+        fout<<M[i][j]<<" ";
+        fout<<endl;
+    }
+    return 0;
+}
