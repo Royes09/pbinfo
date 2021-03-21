@@ -1,0 +1,15 @@
+#include <iostream>
+
+using namespace std;
+
+void factorial(int n, int &r)
+{ int r1=1;
+    if(n==0)
+     r=1;
+        else
+        {
+        factorial (n-1,r1);
+        r=n*r1;
+        }
+
+}
