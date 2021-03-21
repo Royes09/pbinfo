@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,i,j,aux,m,auxx=1;
+    cin>>n;
+    aux=n-2;
+    for(i=1;i<=n;i++)
+        cout<<"*";
+        cout<<endl;
+    for(j=1;j<n;j++)
+    {
+        for(m=1;m<=auxx;m++)
+        cout<<" ";
+        for(i=1;i<=n;i++)
+        cout<<"*";
+        cout<<endl;
+        auxx++;
+    }
+    for(int i=n-1;i>=1;i--)
+    {
+        for(j=aux;j>=1;j--)
+        cout<<" ";
+        for(m=1;m<=n;m++)
+            cout<<"*";
+        cout<<endl;
+     aux--;
+    }
+    return 0;
+}
