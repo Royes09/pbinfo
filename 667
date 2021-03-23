@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+int prim(int x)
+{
+    if(x>1)
+    {
+  int ok=1;
+  for(int a=2;a*a<=x&&ok;a++)
+                if(x%a==0)
+                ok=0;
+
+   return ok;
+
+    } else return 0;
+}
+int main()
+{
+         int n,m,M[600][600],i,j,nr=0;
+         cin>>n>>m;
+         for(i=0;i<n;i++)
+           for(j=0;j<m;j++)
+         cin>>M[i][j];
+         for(i=0;i<n;i++)
+            for(j=0;j<m;j=j+2)
+            {
+                if(prim(M[i][j])==1)
+                    nr++;
+            }
+
+         cout<<nr;
+    return 0;
+}
