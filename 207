@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,M[25][25],i,j,x;
+    cin>>n;
+    for(i=1;i<=n;i++)
+    {
+        x=n;
+        for(j=1;j<=n;j++)
+    {
+        if(i==j)
+        {
+            M[i][j]=0;
+            x--;
+        }
+        else
+        {
+           M[i][j]=x;
+            x--;
+        }
+    }
+    }
+    for(i=1;i<=n;i++)
+    {
+     for(j=1;j<=n;j++)
+              cout<<M[i][j]<<" ";
+              cout<<endl;
+    }
+
+
+    return 0;
+}
