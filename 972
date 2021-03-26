@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+int main()
+{
+    char S[256];
+    char v[11]="aeiouAEIOU";
+    cin.get(S,256);
+    int n=strlen(S);
+    int nr=0;
+    for(int i=1;i<n-1;i++)
+    {
+        if(strchr(v,S[i]))
+            if((S[i+1]>='a' && S[i+1]<='z') || (S[i+1]>='A' && S[i+1]<='Z'))
+            if(!strchr(v,S[i+1]))
+            if((S[i-1]>='a' && S[i-1]<='z') || (S[i-1]>='A' && S[i-1]<='Z'))
+              if(!strchr(v,S[i-1]))
+            nr++;
+    }
+    cout<<nr;
+    return 0;
+}
