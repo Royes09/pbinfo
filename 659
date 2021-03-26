@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,m,j,i,max,S;
+    cin>>n>>m;
+    int M[n+1][m+1];
+     for(i=1;i<=n;i++)
+        for(j=1;j<=m;j++)
+        {
+        cin>>M[i][j];
+        }
+    for(i=1;i<=n;i++)
+    {
+        S=0;
+        max=0;
+        for(j=1;j<=m;j++)
+          {
+              if(M[i][j]>max)
+                max=M[i][j];
+              S=S+M[i][j];
+           }
+           cout<<S-max<<" ";
+    }
+    return 0;
+}
