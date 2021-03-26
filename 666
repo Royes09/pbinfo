@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int n,m,j,i,p,ok,C=0;
+    cin>>n>>m;
+    int M[n+1][m+1];
+    for(i=1;i<=n;i++)
+        for(j=1;j<=m;j++)
+        {
+        cin>>M[i][j];
+        }
+     /*   for(i=1;i<=n;i++)
+        {
+        for(j=1;j<=m;j++)
+            cout<<M[i][j]<<" ";
+            cout<<endl;
+        } */
+        for(i=1;i<=n;i++)
+        if (i%2==0)
+          for(j=1;j<=m;j++)
+              {
+                  ok=0;
+                   if(M[i][j]==1 || M[i][j]==0)
+                      ok=1;
+                  for(p=2;p<=sqrt(M[i][j]) && ok==0;p++)
+                    if(M[i][j]%p==0)
+                    ok=1;
+                  if(ok==0)
+                    C++;
+              }
+          cout<<C;
+    return 0;
+}
